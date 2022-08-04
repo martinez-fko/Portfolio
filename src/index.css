@@ -201,8 +201,9 @@ body.dark {
 
 .header .information img {
   object-fit: cover;
+  object-position: left;
   width: 160px;
-  height: 185px;
+  height: 100%;
 }
 
 .header .information__box {
@@ -253,6 +254,7 @@ body.dark {
   gap: 1rem;
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
 }
 .header .btn i {
   font-size: 1.5rem;

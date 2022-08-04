@@ -11,7 +11,7 @@ const Portfolio = () => {
         </a>
       </div>
       <div className="portfolio-item">
-        <h3>Rick an Morty</h3>
+        <h3>Rick and Morty</h3>
         <a target={"_blank"}  href="https://locationsrickandmorty-fcomtz.netlify.app/">
           <img src="/Project_rick_and_morty.png" alt="Rick and Morty" />
         </a>

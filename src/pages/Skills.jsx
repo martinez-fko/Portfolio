@@ -5,7 +5,7 @@ const Skills = () => {
         <section className="skills" id="skill">
         <div className="skills__title">
           <h2>Experiencia y habilidades</h2>
-          <p>He desarrollado mis habilidades a lo largo del camino.</p>
+          <p>He diseñado y desarrollado aplicaciones con React consumiendo APIS. He desarrollado toda la lógica con vanilla JavaScript. </p>
         </div>
         <div className="skills__experience">
           <h3>Experiencia</h3>

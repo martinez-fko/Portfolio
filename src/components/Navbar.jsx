@@ -15,17 +15,17 @@ const Navbar = () => {
       <ul className={isActive ? "links active" : "links"}>
         <li>
           <a href="#" onClick={() => setIsActive(false)}>
-            Home
+            Inicio
           </a>
         </li>
         <li>
           <a href="#skill" onClick={() => setIsActive(false)}>
-            Experience and skills
+            Experiencia y habilidades
           </a>
         </li>
         <li>
           <a href="#portfolio" onClick={() => setIsActive(false)}>
-            Portfolio
+            Portafolio
           </a>
         </li>
         {/* <li>
