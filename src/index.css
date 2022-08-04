@@ -1,0 +1,500 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+/* --- RESET ---  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+/* --- VAR CSS ---  */
+:root {
+  ---color-violet: #8e7bef;
+  ---color-yelllow: #fcda68;
+  ---color-white: #fff;
+  ---color-black: #222;
+  ---color-gray: #423f40;
+  ---color-ligth-gray: #f9f5f2;
+  ---font-title: 50px;
+  ---font-subtitle: 32px;
+  ---font-subsection: 20px;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(---color-black);
+  background: var(---color-white);
+  transition: 1s;
+}
+
+body.dark {
+  ---color-violet: #8e7bef;
+  ---color-yelllow: #423f40;
+  ---color-white: #222;
+  ---color-black: #fff;
+  ---color-gray: #f9f5f2;
+  ---color-ligth-gray: #423f40;
+}
+
+/* --- Style for Navbar ---  */
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 0 5px;
+}
+.navbar .links {
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  background: var(---color-ligth-gray);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem 0;
+  transition: 0.5s;
+}
+
+.navbar .links.active {
+  transform: translateX(100%);
+}
+
+.navbar .links li {
+  list-style: none;
+}
+
+.navbar .links a {
+  text-decoration: none;
+  color: var(---color-black);
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: #f9f5f2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.mode {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: #f9f5f2;
+  color: #222;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.mode i {
+  transition: 0.5s;
+}
+
+.mode i:nth-child(1) {
+  position: absolute;
+  top: -32px;
+}
+
+.mode.dark i:nth-child(1) {
+  transform: translateY(36px);
+}
+
+.mode.dark i:nth-child(2) {
+  position: absolute;
+  transform: translateY(32px);
+}
+
+.toggle span {
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  left: 5px;
+  background: var(---color-violet);
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.toggle span:nth-child(1) {
+  transform: translateY(-10px);
+  width: 20px;
+  left: 5px;
+}
+
+.toggle.active span:nth-child(1) {
+  transform: translateY(0px) rotate(45deg);
+  width: 20px;
+  transition-delay: 0.25s;
+}
+
+.toggle span:nth-child(2) {
+  transform: translateY(9px);
+  width: 15px;
+  left: 5px;
+}
+
+.toggle.active span:nth-child(2) {
+  transform: translateY(0px) rotate(315deg);
+  width: 20px;
+  transition-delay: 0.25s;
+}
+
+.toggle.active span:nth-child(3) {
+  transform: translateX(60px);
+}
+
+/* --- style for header ---  */
+.header {
+  display: grid;
+  width: 350px;
+  margin: 1rem auto 2rem;
+  grid-template-areas:
+    "title"
+    "info"
+    "btn";
+  gap: 1rem;
+}
+
+.header .title {
+  grid-area: title;
+}
+
+.header .title h1 {
+  font-size: var(---font-title);
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+.header .title h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(---color-gray);
+}
+
+.header .information {
+  grid-area: info;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.header .information img {
+  object-fit: cover;
+  width: 160px;
+  height: 185px;
+}
+
+.header .information__box {
+  padding: 0 1rem;
+}
+
+.header .information__box p:nth-child(2) {
+  color: var(---color-gray);
+  margin-top: 1rem;
+}
+
+.header .information__box span {
+  color: var(---color-violet);
+  font-weight: 400;
+}
+
+.information__box .networks {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.information__box .networks .icon {
+  width: 30px;
+  height: 30px;
+  background: var(---color-violet);
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header .btn {
+  grid-area: btn;
+  background: var(---color-violet);
+  border: none;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 45px;
+  margin: 1rem auto;
+  gap: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.header .btn i {
+  font-size: 1.5rem;
+}
+
+/* --- style for skill and experience ---  */
+.skills {
+  background: var(---color-yelllow);
+  padding: 2rem 0;
+}
+
+.skills__title,
+.skills__experience,
+.skills__box {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.skills__title h2 {
+  font-size: var(---font-subtitle);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.skills__title p {
+  margin-bottom: 1rem;
+}
+
+.skills__experience {
+  padding: 1rem 0;
+}
+
+.skills__experience h3 {
+  font-size: var(---font-subsection);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.skills__experience .experience-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid var(---color-black);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.skills__experience .experience-item:nth-child(4) {
+  border-bottom: none;
+}
+
+.experience-item .date {
+  font-size: 0.9rem;
+  grid-row-start: span 2;
+}
+
+.experience-item .experience-title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.skills__box h2 {
+  font-size: var(---font-subsection);
+  padding-bottom: 1rem;
+}
+
+.skills__box .container_skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.item-skill {
+  justify-self: center;
+  align-self: center;
+}
+
+.item-skill img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* --- Styles for projects ---  */
+.portfolio {
+  width: 350px;
+  margin: 3rem auto;
+}
+
+.portfolio h2 {
+  font-size: var(---font-subtitle);
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-item {
+  margin-bottom: 1rem;
+}
+
+.portfolio-item h3 {
+  color: var(---color-violet);
+  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.portfolio-item img {
+  width: 100%;
+}
+
+/* --- style for footer ---  */
+.footer {
+  background: var(---color-yelllow);
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer h2 {
+  color: var(---color-gray);
+  font-size: 1.1em;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .header {
+    grid-template-areas:
+      "title info"
+      "btn info";
+    grid-template-columns: 1fr 1fr;
+    width: 620px;
+  }
+
+  .header .information img {
+    height: 100%;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills__experience {
+    width: 450px;
+    justify-self: start;
+    margin: 0;
+  }
+
+  .skills__box {
+    grid-column: span 2;
+  }
+
+  .skills__box .container_skills {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5rem;
+  }
+
+  .skills__box {
+    width: 700px;
+  }
+
+  .portfolio {
+    width: 620px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .portfolio h2 {
+    grid-column: span 3;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .navbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px 0 5px;
+  }
+  .navbar .links {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: var(---color-ligth-gray);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5rem;
+    align-items: center;
+    padding: 1rem 6rem;
+    transition: 0.5s;
+  }
+
+  .navbar .toggle {
+    display: none;
+  }
+
+  .navbar .links a.active {
+    color: var(---color-violet);
+  }
+
+  .header {
+    width: 1150px;
+  }
+  .header .information img {
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem;
+  }
+
+  .header .information__box {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+  }
+
+  .information__box .networks .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .information__box .networks i {
+    font-size: 1.5rem;
+  }
+
+  .header .btn {
+    width: 300px;
+    border-radius: 5px;
+  }
+
+  .skills__title,
+  .skills__experience {
+    width: 350px;
+  }
+
+  .portfolio {
+    width: 1150px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
