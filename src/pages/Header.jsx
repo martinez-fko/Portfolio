@@ -9,7 +9,7 @@ const Header = () => {
         </h1>
         <h2>Hola, soy Francisco Martínez, tengo 29 años. Soy de México.</h2>
       </div>
-      <a href="/CV_JOSÉ FRANCISCO MARTÍNEZ PÉREZ.pdf" className="btn" download={'CV_Francisco_Martinez'}>
+      <a href="/CV-JFMP-Desarrollador-Front-End.pdf" className="btn" download={'CV_Francisco_Martinez_Front-End'}>
         <i className="bx bx-cloud-download"></i>
         CV
       </a>
