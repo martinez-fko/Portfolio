@@ -31,12 +31,12 @@ const Header = () => {
             >
               <i className="bx bxl-linkedin"></i>
             </a>
-            <a href="#" className="icon">
+            {/* <a href="#" className="icon">
               <i className="bx bxl-facebook"></i>
             </a>
             <a href="#" className="icon">
               <i className="bx bxl-instagram"></i>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
