@@ -22,7 +22,7 @@
   ---font-subsection: 20px;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -341,7 +341,112 @@ body.dark {
   margin: 3rem auto;
 }
 
-.portfolio h2 {
+.portfolio__container {
+  position: relative;
+  width: 1110px;
+  display: flex;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.portfolio__container .portfolio__box {
+  position: relative;
+  width: 275px;
+  height: 275px;
+  background: #000;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.portfolio__container:hover .portfolio__box {
+  transform: rotateY(25deg);
+}
+
+.portfolio__container .portfolio__box:hover ~ .portfolio__box {
+  transform: rotateY(-25deg);
+}
+
+.portfolio__container .portfolio__box:hover{
+  transform: rotateY(0deg) scale(1.25);
+  z-index: 1;
+  box-shadow: 0 25px 40px rgb(0, 0, 0, 0.5);
+}
+
+.portfolio__container .portfolio__box .portfolio__imgBx{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio__container .portfolio__box .portfolio__imgBx::before{
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgb(189, 175, 175), #000);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+  mix-blend-mode: multiply;
+}
+
+.portfolio__container .portfolio__box:hover .portfolio__imgBx::before{
+  opacity: 1;
+}
+
+.portfolio__container .portfolio__box .portfolio__imgBx img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio__container .portfolio__box .portfolio__content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  padding: 20px;
+  align-items: flex-end;
+}
+
+.portfolio__container .portfolio__box .portfolio__content h2{
+  color: #fff;
+  transition: 0.5s;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 20px;
+  transform: translateY(200px);
+}
+
+.portfolio__container .portfolio__box:hover .portfolio__content p,
+.portfolio__container .portfolio__box:hover .portfolio__content h2{
+  transform: translateY(0);
+}
+
+.portfolio__container .portfolio__box .portfolio__content p{
+  color: #fff;
+  transition: 0.5s;
+  font-size: 14px;
+  transform: translateY(200px);
+}
+
+/* .portfolio h2 {
   font-size: var(---font-subtitle);
   margin-bottom: 1.5rem;
 }
@@ -358,7 +463,7 @@ body.dark {
 
 .portfolio-item img {
   width: 100%;
-}
+} */
 
 /* --- style for footer ---  */
 .footer {
