@@ -333,6 +333,11 @@ body.dark {
 .item-skill img {
   display: block;
   margin: 0 auto;
+  transition: 0.5s;
+}
+
+.item-skill img:hover {
+  transform: rotate(365deg);
 }
 
 /* --- Styles for projects ---  */
